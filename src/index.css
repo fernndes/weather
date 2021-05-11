@@ -41,3 +41,10 @@ code {
 button:hover {
   background: #cccccc;
 }
+
+@media (max-width: 400px) {
+  .card-weather {
+    display: flex;
+    flex-direction: column;
+  }
+}

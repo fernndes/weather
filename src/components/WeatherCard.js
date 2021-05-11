@@ -4,7 +4,7 @@ import { WeatherCard as WeatherCardComponent } from '../styles/global'
 
 function WeatherCard({ data }) {
     return (
-        <WeatherCardComponent>
+        <WeatherCardComponent className="card-weather">
             <div>{data[0].fullData.weather[0].main}</div>
             <div>Max: {data[0].fullData.temp.max} °C</div>
             <div>Min: {data[0].fullData.temp.min} °C</div>
