@@ -4,6 +4,10 @@ export const DefaultContainer = styled.div`
     width: 70%;
     margin: 40px auto;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 360px) {
+        width: 90%;
+    }
 `
 
 export const SearchBar = styled.input`
@@ -33,7 +37,7 @@ export const WeatherGraph = styled.div`
     padding: 20px 20px;
     margin: 10px 0;
     background-color: rgba(255, 255, 255, .15);  
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);    
 `
 
 
