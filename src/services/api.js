@@ -13,3 +13,8 @@ export async function getCoord(name) {
     let request = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${process.env.REACT_APP_APP_ID}`)
     return request.data.coord
 }
+
+export async function geIcon(code) {
+    let request = await axios.get(`http://openweathermap.org/img/wn/${code}@2x.png`)
+    return request
+}
