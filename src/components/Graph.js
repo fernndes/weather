@@ -1,5 +1,5 @@
 import React from 'react'
-import { LineChart, Line, Tooltip, Legend, ResponsiveContainer, XAxis } from 'recharts';
+import { LineChart, Line, Tooltip, ResponsiveContainer, XAxis } from 'recharts';
 
 
 function Graph({ data }) {
