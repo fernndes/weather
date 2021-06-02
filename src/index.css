@@ -9,9 +9,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body,
 body #root {
-  background: url('./assets/clouds.jpg');
+  padding: 8rem;
+  height: 100vh;
+  background-image: url("../src/assets/clouds.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -32,7 +34,7 @@ code {
 }
 
 .App {
-  display: flex;
+  height: 100%;
 }
 
 .dropdown {
@@ -50,13 +52,6 @@ button:hover {
   background: #cccccc;
 }
 
-@media (max-width: 400px) {
-  .card-weather {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
 .chart {
   height: 500px;
   width: 100%;
@@ -66,8 +61,6 @@ button:hover {
   overflow: hidden;
 }
 
-
-
 .error {
   align-self: center;
   color: red;
@@ -76,4 +69,48 @@ button:hover {
 .glass {
   background-color: rgba(255, 255, 255, .15);  
   backdrop-filter: blur(5px);
+}
+
+.weathernow-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 400px) {
+  .card-weather {
+    display: flex;
+    flex-direction: column;
+  }
+  body #root {
+    padding: 0rem;
+  }
+  .weathernow-container {
+    flex-grow: 0 !important;
+    padding: 0px;
+  }
+  .weathernow-container .weather-info {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;    
+  }
+  .weather-info p {
+    margin-right: 0rem !important;
+  }
+  .weathernow-local {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 0rem !important;
+  }
 }

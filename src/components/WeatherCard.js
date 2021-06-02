@@ -5,7 +5,6 @@ import { WeatherCard as WeatherCardComponent } from '../styles/global'
 function WeatherCard({ data }) {
     return (
         <WeatherCardComponent className="card-weather">
-            <img src={`https://openweathermap.org/img/wn/${data[0].fullData.weather[0].icon}.png`} alt="icon" />
             <div>{data[0].fullData.weather[0].main}</div>
             <div>Max: {data[0].fullData.temp.max} °C</div>
             <div>Min: {data[0].fullData.temp.min} °C</div>

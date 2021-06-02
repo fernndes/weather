@@ -4,11 +4,13 @@ import SearchBar from '../components/SearchBar'
 import WeatherCard from '../components/WeatherCard'
 import WeatherChart from '../components/Graph'
 import { DefaultContainer } from '../styles/global'
-import { getWeather, getCoord } from '../services/api'
+import { getWeather, getCoord, weatherNow } from '../services/api'
+import WeatherNow from '../components/WeatherNow'
 
 function Main() {
     const [city, setCity] = useState('')
     const [data, setData] = useState(null)
+    const [now, setNow] = useState(null)
     const [error, setError] = useState('')
 
     async function get() {
@@ -16,6 +18,8 @@ function Main() {
         try {
             let coord = await getCoord(city)
             let weather = await getWeather(coord.lat, coord.lon)
+            let setWeatherNow = await weatherNow(coord.lat, coord.lon)
+            setNow(setWeatherNow)
             setData(weather)
             setError('')
         } catch (err) {
@@ -25,9 +29,12 @@ function Main() {
 
     return (
         <DefaultContainer>
-            <SearchBar city={city} set={setCity} get={get} error={error} />
-            {data && <WeatherCard data={data} />}
-            {data && <WeatherChart data={data} />}
+            <WeatherNow data={now} />
+            <div style={{ display: 'flex', flexDirection: 'column', width: 350 }}>
+                <SearchBar city={city} set={setCity} get={get} error={error} />
+                {data && <WeatherCard data={data} />}
+            </div>
+            {/* {data && <WeatherChart data={data} />} */}
         </DefaultContainer>
     )
 }

@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
 export const DefaultContainer = styled.div`
-    width: 70%;
-    margin: 40px auto;
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 
     @media (max-width: 360px) {
-        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 `
 
@@ -17,18 +22,17 @@ export const SearchBar = styled.input`
     border: none;
     outline: none;
     background-color: rgba(255, 255, 255, .15);  
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
 `
 
 export const WeatherCard = styled.div`
+    flex-grow: 1;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
     padding: 20px 20px;
     background-color: rgba(255, 255, 255, .15);  
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
 `
 
 export const WeatherGraph = styled.div`
@@ -39,5 +43,3 @@ export const WeatherGraph = styled.div`
     background-color: rgba(255, 255, 255, .15);  
     backdrop-filter: blur(5px);    
 `
-
-
