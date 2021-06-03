@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import SearchBar from '../components/SearchBar'
 import WeatherCard from '../components/WeatherCard'
-import WeatherChart from '../components/Graph'
 import { DefaultContainer } from '../styles/global'
 import { getWeather, getCoord, weatherNow } from '../services/api'
 import WeatherNow from '../components/WeatherNow'
@@ -34,7 +33,6 @@ function Main() {
                 <SearchBar city={city} set={setCity} get={get} error={error} />
                 {data && <WeatherCard data={data} />}
             </div>
-            {/* {data && <WeatherChart data={data} />} */}
         </DefaultContainer>
     )
 }
